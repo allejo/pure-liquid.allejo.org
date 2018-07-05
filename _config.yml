@@ -1,12 +1,15 @@
 title: Pure Liquid
+description: >
+  A collection of Jekyll utilities written with just Liquid. No plug-ins,
+  no javascript, no gems.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://pure-liquid.allejo.org" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
 collections:
-    - projects
+  - projects
 
 markdown: kramdown
 
 sass:
-    style: compressed
+  style: compressed
