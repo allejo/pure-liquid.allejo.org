@@ -1,0 +1,19 @@
+.selling-point {
+    &__header {
+        text-align: center;
+
+        img {
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            color: $brand-primary;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,79 @@
+---
+layout: default
+---
+
+<div class="welcome-banner text-center mb-5 py-5">
+    <img src="{{ '/assets/images/main-logo.svg' | relative_url }}"
+         alt="Pure Liquid logo consisting of three water drops"
+         class="main-logo"
+    >
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <section class="selling-point">
+                <header class="selling-point__header">
+                    <img src="{{ '/assets/images/octocat.png' | relative_url }}"
+                        alt="GitHub Octocat silhouette">
+                    <h2>always GitHub Pages compatible</h2>
+                </header>
+
+                <p>GitHub Pages doesn’t support custom Jekyll plug-ins, is this plug-in whitelisted? This is all written in Liquid so need for any whitelisting.</p>
+            </section>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
+            <section class="selling-point">
+                <header class="selling-point__header">
+                    <img src="{{ '/assets/images/css.png' | relative_url }}"
+                        alt="CSS file icon">
+                    <h2>bring your own CSS</h2>
+                </header>
+
+                <p>Worried about how weird or ugly a plug-in's CSS may be? These projects only generate semantically sane HTML for you to style.</p>
+            </section>
+        </div>
+        <div class="col-md-6 col-lg-4 mb-5 mb-lg-0 offset-md-3 offset-lg-0">
+            <section class="selling-point">
+                <header class="selling-point__header">
+                    <img src="{{ '/assets/images/pencil.png' | relative_url }}"
+                        alt="Pencil icon">
+                    <h2>make your own edits</h2>
+                </header>
+
+                <p>No need to worry about learning Ruby to edit a plug-in or getting your edits approved. It’s all Liquid, just change whatever HTML you want generated.</p>
+            </section>
+        </div>
+    </div>
+
+    <h2 class="page-break">Projects</h2>
+
+    <div class="row">
+        {% assign actions = 'star,fork' | split: ',' %}
+        {% for project in site.projects %}
+            <div class="col-md-6">
+                <section class="project-card">
+                    <header>
+                        <h3>{{ project.name }}</h3>
+                    </header>
+
+                    <article>
+                        {{ project.content }}
+                    </article>
+
+                    <footer>
+                        {% for action in actions %}
+                            <iframe src="https://ghbtns.com/github-btn.html?user={{ project.github.user }}&repo={{ project.github.repo }}&type={{ action }}&count=true&size=large"
+                                    frameborder="0"
+                                    scrolling="0"
+                                    width="160px"
+                                    height="30px"
+                                    title="{{ action | capitalize }} on GitHub"
+                            ></iframe>
+                        {% endfor %}
+                    </footer>
+                </section>
+            </div>
+        {% endfor %}
+    </div>
+</div>

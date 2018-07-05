@@ -1,0 +1,12 @@
+title: Pure Liquid
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://pure-liquid.allejo.org" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+collections:
+    - projects
+
+markdown: kramdown
+
+sass:
+    style: compressed

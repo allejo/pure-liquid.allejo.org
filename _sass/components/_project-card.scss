@@ -1,0 +1,22 @@
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    h3 {
+        color: $brand-primary;
+    }
+
+    h3,
+    article {
+        margin-bottom: 1rem;
+    }
+
+    article {
+        flex-grow: 1;
+
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+}

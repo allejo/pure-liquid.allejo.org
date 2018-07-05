@@ -1,0 +1,23 @@
+.page-break {
+    align-items: center;
+    display: flex;
+    margin: 3rem 0;
+    text-align: center;
+
+    &::before,
+    &::after {
+        border-top: 1px solid $brand-complementary;
+        content: '';
+        display: block;
+        flex-grow: 1;
+        height: 1px;
+    }
+
+    &::before {
+        margin-right: 15px;
+    }
+
+    &::after {
+        margin-left: 15px;
+    }
+}

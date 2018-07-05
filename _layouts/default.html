@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <title>{{ post.title | default: page.title | default: site.title }}</title>
+
+        <link rel="stylesheet"
+              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+              integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
+              crossorigin="anonymous"
+        >
+        <link rel="stylesheet"
+              href="{{ '/assets/css/styles.css' | absolute_url }}"
+        >
+    </head>
+
+    <body>
+        {{ content }}
+
+        <footer class="page-footer border-top py-4 mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 text-center text-md-left">
+                        <p class="m-0">
+                            <a href="https://allejo.io">@allejo</a>
+                        </p>
+                    </div>
+                    <div class="col-md-6 text-center text-md-right">
+                        <p class="m-0">
+                            Copyright &copy; {{ 'now' | date: '%Y' }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>
