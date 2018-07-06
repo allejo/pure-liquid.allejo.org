@@ -48,10 +48,10 @@ layout: default
 
     <h2 class="page-break">Projects</h2>
 
-    <div class="row">
+    <div class="row mb-n4">
         {% assign actions = 'star,fork' | split: ',' %}
         {% for project in site.projects %}
-            <div class="col-md-6">
+            <div class="col-lg-6 mb-4">
                 <section class="project-card">
                     <header>
                         <h3>{{ project.name }}</h3>

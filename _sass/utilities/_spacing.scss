@@ -1,0 +1,14 @@
+$spacer: 1rem;
+$spacings:
+    $spacer * .25,
+    $spacer * .5,
+    $spacer,
+    $spacer * 1.5,
+    $spacer * 3,
+;
+
+@for $i from 1 through length($spacings) {
+    .mb-n#{$i} {
+        margin-bottom: -1 * nth($spacings, $i);
+    }
+}
