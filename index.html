@@ -19,7 +19,7 @@ layout: default
                     <h2>always GitHub Pages compatible</h2>
                 </header>
 
-                <p>GitHub Pages doesn’t support custom Jekyll plug-ins, is this plug-in whitelisted? This is all written in Liquid so need for any whitelisting.</p>
+                <p>GitHub Pages doesn't support custom Jekyll plug-ins, is this plug-in whitelisted? This is all written in Liquid so need for any whitelisting.</p>
             </section>
         </div>
         <div class="col-md-6 col-lg-4 mb-5 mb-lg-0">
@@ -53,8 +53,15 @@ layout: default
         {% for project in site.projects %}
             <div class="col-lg-6 mb-4">
                 <section class="project-card">
-                    <header>
-                        <h3>{{ project.name }}</h3>
+                    <header class="mb-3 d-flex align-items-center">
+                        <h3 class="mb-0">{{ project.name }}</h3>
+
+                        <div class="flex-grow-1 text-right">
+                            <img
+                                src="https://img.shields.io/github/v/tag/{{ project.github.user }}/{{ project.github.repo }}?label=Latest%20Version&style=flat-square"
+                                alt="Latest version for {{ project.github.repo }}"
+                            />
+                        </div>
                     </header>
 
                     <article>
@@ -63,12 +70,13 @@ layout: default
 
                     <footer>
                         {% for action in actions %}
-                            <iframe src="https://ghbtns.com/github-btn.html?user={{ project.github.user }}&repo={{ project.github.repo }}&type={{ action }}&count=true&size=large"
-                                    frameborder="0"
-                                    scrolling="0"
-                                    width="160px"
-                                    height="30px"
-                                    title="{{ action | capitalize }} on GitHub"
+                            <iframe
+                                src="https://ghbtns.com/github-btn.html?user={{ project.github.user }}&repo={{ project.github.repo }}&type={{ action }}&count=true&size=large"
+                                frameborder="0"
+                                scrolling="0"
+                                width="160px"
+                                height="30px"
+                                title="{{ action | capitalize }} on GitHub"
                             ></iframe>
                         {% endfor %}
                     </footer>
